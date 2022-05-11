@@ -180,7 +180,7 @@ data:extend({
       "smelting",
       --"chemistry" -- only to test fluid connections
     },
-    crafting_speed = 4,
+    crafting_speed = 8,
     damaged_trigger_effect = {
       entity_name = "spark-explosion",
       offset_deviation = { { -0.5, -0.5 }, { 0.5, 0.5 } },

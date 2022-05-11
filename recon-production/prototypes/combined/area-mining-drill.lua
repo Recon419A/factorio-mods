@@ -2508,7 +2508,7 @@ data:extend(
       }
     },
 
-    mining_speed = 1,
+    mining_speed = 2,
     energy_source =
     {
       type = "electric",
