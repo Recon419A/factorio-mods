@@ -8,7 +8,7 @@ data:extend({
         enabled = false,
         ingredients = {
             { "express-splitter", 1 },
-            { "engine-unit", 10 },
+            { "engine-unit", 5 },
             { "advanced-circuit", 20 },
             { type = "fluid", name = "lubricant", amount = 120 },
         },
@@ -22,8 +22,8 @@ data:extend({
         enabled = false,
         ingredients = {
             { "express-transport-belt", 1 },
-            { "engine-unit", 10},
-            { type = "fluid", name = "lubricant", amount = 40}
+            { "engine-unit", 5},
+            { type = "fluid", name = "lubricant", amount = 30}
         },
         result = "kr-advanced-transport-belt",
     },
@@ -35,8 +35,8 @@ data:extend({
         enabled = false,
         ingredients = {
             { "express-underground-belt", 2 },
-            { "engine-unit", 40 },
-            { type = "fluid", name = "lubricant", amount = 80 },
+            { "engine-unit", 20 },
+            { type = "fluid", name = "lubricant", amount = 60 },
         },
         result = "kr-advanced-underground-belt",
         result_count = 2,
@@ -65,7 +65,7 @@ data:extend({
         ingredients = {
             { "kr-advanced-transport-belt", 1 },
             { "engine-unit", 10 },
-            { type = "fluid", name = "lubricant", amount = 80 },
+            { type = "fluid", name = "lubricant", amount = 40 },
         },
         result = "kr-superior-transport-belt",
     },
@@ -77,8 +77,8 @@ data:extend({
         enabled = false,
         ingredients = {
             { "kr-advanced-underground-belt", 2 },
-            { "engine-unit", 80 },
-            { type = "fluid", name = "lubricant", amount = 160 },
+            { "engine-unit", 40 },
+            { type = "fluid", name = "lubricant", amount = 80 },
         },
         result = "kr-superior-underground-belt",
         result_count = 2,
