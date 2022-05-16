@@ -92,7 +92,9 @@ data:extend({
     },
   },
   {
-    type = "assembling-machine",
+    type = "furnace",
+    source_inventory_size = 1,
+    result_inventory_size = 1,
     name = "industrial-furnace",
     icon = "__recon-production__/graphics/icons/industrial-furnace.png",
     icon_size = 64,
@@ -180,7 +182,7 @@ data:extend({
       "smelting",
       --"chemistry" -- only to test fluid connections
     },
-    crafting_speed = 8,
+    crafting_speed = 4,
     damaged_trigger_effect = {
       entity_name = "spark-explosion",
       offset_deviation = { { -0.5, -0.5 }, { 0.5, 0.5 } },
@@ -201,82 +203,82 @@ data:extend({
       },
     },
     energy_usage = "500kW",
-    fluid_boxes =
-    {
-      {
-        production_type = "input",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -3} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "input",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -3} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "input",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-3, -1} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "input",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {3, -1} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "output",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 3} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "output",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 3} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "output",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {3, 1} }},
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      {
-        production_type = "output",
-        pipe_picture = pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-3, 1} }}, -- west south
-        secondary_draw_orders = { north = -1, east = -1, west = -1 }
-      },
-      off_when_no_fluid_recipe = true
-    },
+    --fluid_boxes =
+    --{
+    --  {
+    --    production_type = "input",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = -1,
+    --    pipe_connections = {{ type="input", position = {-1, -3} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "input",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = -1,
+    --    pipe_connections = {{ type="input", position = {1, -3} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "input",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = -1,
+    --    pipe_connections = {{ type="input", position = {-3, -1} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "input",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = -1,
+    --    pipe_connections = {{ type="input", position = {3, -1} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "output",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = 1,
+    --    pipe_connections = {{ type="output", position = {-1, 3} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "output",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = 1,
+    --    pipe_connections = {{ type="output", position = {1, 3} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "output",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = 1,
+    --    pipe_connections = {{ type="output", position = {3, 1} }},
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  {
+    --    production_type = "output",
+    --    pipe_picture = pipepictures(),
+    --    pipe_covers = pipecoverspictures(),
+    --    base_area = 10,
+    --    base_level = 1,
+    --    pipe_connections = {{ type="output", position = {-3, 1} }}, -- west south
+    --    secondary_draw_orders = { north = -1, east = -1, west = -1 }
+    --  },
+    --  off_when_no_fluid_recipe = true
+    --},
     ingredient_count = 12,
     module_specification =
     {
